@@ -8,14 +8,12 @@ import 'Jobp_feature/domain/reposotrey/job_feature.dart';
 import 'Jobp_feature/domain/use case/getjob.dart';
 import 'core/error/failure.dart';
 
-
-
 void main() async {
   BaseDataSource vv = DataSource();
   BaseJobsReposotrey basere = JobReposotrey(vv);
-  Either<Failure, List<Jobs>> jop = await JobsByNameUsecase(basere).call();
+  Either<Failure, List<Jobs>> jop = await GetJobsUsecase(basere).call();
   Either<Failure, List<Jobs>> joob =
-      await JobsByNameUsecase(basere).excute('Test');
+      await GetJobsUsecase(basere).excute('Test');
 
   print(joob);
 
