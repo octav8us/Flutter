@@ -7,15 +7,17 @@ import 'Jobp_feature/domain/entities/jobs.dart';
 import 'Jobp_feature/domain/reposotrey/job_feature.dart';
 import 'Jobp_feature/domain/use case/getjob.dart';
 import 'core/error/failure.dart';
+import 'core/services/services_locator.dart';
 
 void main() async {
-  BaseDataSource vv = DataSource();
-  BaseJobsReposotrey basere = JobReposotrey(vv);
-  Either<Failure, List<Jobs>> jop = await GetJobsUsecase(basere).call();
-  Either<Failure, List<Jobs>> joob =
-      await GetJobsUsecase(basere).excute('Test');
+   ServicesLocator().init();
+  // BaseDataSource vv = DataSource();
+  // BaseJobsReposotrey basere = JobReposotrey(vv);
+  // Either<Failure, List<Jobs>> jop = await GetJobsUsecase(basere).call();
+  // Either<Failure, List<Jobs>> joob =
+  //     await GetJobsUsecase(basere).excute('Test');
 
-  print(joob);
+  // print(joob);
 
   runApp(const MyApp());
 }
